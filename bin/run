@@ -1,3 +1,35 @@
 #!/usr/bin/env ruby
 
 require_relative "../lib/environment"
+
+bob = Author.new("Bob")
+sarah = Author.new("Sarah")
+
+book_1 = Book.new("A story about Bob", "Non-Fiction", 25, "05/25/1675", bob)
+book_2 = Book.new("A story about Sam", "Fiction", 25, "05/26/1675", bob)
+book_3 = Book.new("A story about Sarah", "Science-Fiction", 25, "05/27/1675", sarah)
+
+
+# bob.add_book(book_1)
+# bob.add_book(book_2)
+# sarah.add_book(book_3)
+
+# bob.books << book_1
+# bob.books << book_2
+# sarah.books << book_3
+
+# book_1.author = bob
+# book_2.author = bob
+# book_3.author = sarah
+
+binding.pry
+
+book_1.author # accessing hte reader method, gives us the author object
+book_1.author.name # accesses the name reader of the author instance / object
+
+author.books # gives us reader books that was defaulted to an empty array, can populate with book objects
+author.books.each do |book| # for each book object
+    # print out book object's title
+    puts book.title
+end
+
